@@ -36,9 +36,9 @@ System.debug('9: ' + Encrypt.decryptString(encryptedfromNodeJSagain));
         return encryptedText;
     }
     
-    public static String decryptString(String encodedCipherText) {
+    public static String decryptString(String encryptedText) {
         String clearText = null;
-        Blob encryptedBlob = EncodingUtil.base64Decode(encodedCipherText);
+        Blob encryptedBlob = EncodingUtil.base64Decode(encryptedText);
         Blob decryptedBlob = Crypto.decryptWithManagedIV('AES256', KEY, encryptedBlob);
         clearText = decryptedBlob.toString();
         return clearText;
